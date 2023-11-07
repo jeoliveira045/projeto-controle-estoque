@@ -1,0 +1,20 @@
+<h2>Lista de movimentações</h2>
+<button (click)="addMovimentacao()">Realizar Movimentacao</button>
+<table cellspacing="0">
+  <thead>
+  </thead>
+  <tbody>
+    <td style="border: 1px solid black;">
+      <tr style="border-bottom: 1px solid black;" *ngFor="let item of movimentArrayList">{{item.id}}</tr>
+    </td>
+    <td style="border: 1px solid black;">
+      <tr *ngFor="let item of movimentArrayList">{{item.movType}}</tr>
+    </td>
+    <td style="border: 1px solid black;">
+      <tr *ngFor="let item of movimentArrayList">{{item.movData}}</tr>
+    </td>
+  </tbody>
+</table>
+<div class="addMovimentacao" *ngIf="showAddMovimentacao">
+
+</div>

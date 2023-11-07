@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/xe # URL de conexão do Oracle
+    username: SYSTEM # Nome de usuário do banco de dados Oracle
+    password: 123 # Senha do banco de dados Oracle
+    driver-class-name: oracle.jdbc.driver.OracleDriver # Driver JDBC do Oracle
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+

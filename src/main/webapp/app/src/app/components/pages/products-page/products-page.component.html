@@ -1,0 +1,16 @@
+<h2>Lista de produtos</h2>
+<table>
+  <thead>
+  </thead>
+  <tbody>
+    <td>
+      <tr *ngFor="let item of productArrayList">{{item.id}}</tr>
+    </td>
+    <td>
+      <tr *ngFor="let item of productArrayList">{{item.name}}</tr>
+    </td>
+    <td>
+      <tr *ngFor="let item of productArrayList">{{item.quantity}}</tr>
+    </td>
+  </tbody>
+</table>
