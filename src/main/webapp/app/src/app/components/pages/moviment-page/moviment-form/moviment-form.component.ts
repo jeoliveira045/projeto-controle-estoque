@@ -1,19 +1,14 @@
-import {Component, DoCheck, OnInit, ViewChild} from '@angular/core';
+import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
 import {Form, FormControl} from '@angular/forms';
 import {Products} from "../../../../domain/products";
+import * as events from "events";
 
 @Component({
   selector: 'app-moviment-form',
   templateUrl: './moviment-form.component.html',
   styleUrls: ['./moviment-form.component.scss']
 })
-export class MovimentFormComponent implements OnInit, DoCheck {
-
-  name: FormControl<any> = new FormControl<any>('')
-
-  quantity = new FormControl();
-
-  unitValue = new FormControl();
+export class MovimentFormComponent implements OnInit{
 
   movType: FormControl<any> = new FormControl<any>('')
 
@@ -21,31 +16,17 @@ export class MovimentFormComponent implements OnInit, DoCheck {
 
   productArray: Array<Products> = new Array<Products>();
 
-  test: string = ''
+  index: number|null = null
 
-  @ViewChild('inputElement')
-  inputElement: any
-
-
+  log(e:any){
+    this.productArray.push(e)
+  }
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  addProduto(){
-    let product = new Products()
-    product.name = this.name.value;
-    product.quantity = this.quantity.value;
-    product.unityValue = this.unitValue.value;
-    this.productArray.push(product)
-    console.log(this.productArray)
-  }
 
-  ngDoCheck(){
-    this.test = this.inputElement
-    console.log(this.test)
-  }
 
 
 }

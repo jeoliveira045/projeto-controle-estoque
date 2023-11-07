@@ -12,9 +12,6 @@ export class MovimentPageComponent implements OnInit {
 
   movimentArrayList: Array<Moviment> = new Array<Moviment>();
 
-  valor: string = '';
-  valor2: number = 0;
-  valor3: number = 0;
 
   formDataChild: Products  = new Products();
 

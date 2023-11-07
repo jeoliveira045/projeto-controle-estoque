@@ -1,0 +1,7 @@
+com/controle/estoque/repository/ProductRepository.class
+com/controle/estoque/entity/Moviment.class
+com/controle/estoque/rest/ProductRest.class
+com/controle/estoque/entity/Product.class
+com/controle/estoque/repository/MovimentRepository.class
+com/controle/estoque/EstoqueApplication.class
+com/controle/estoque/rest/MovimentRest.class

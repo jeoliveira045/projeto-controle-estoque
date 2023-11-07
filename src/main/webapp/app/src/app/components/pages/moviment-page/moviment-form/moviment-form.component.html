@@ -5,34 +5,5 @@
 </select><br>
 <label>Movimentações a serem realizadas</label><br>
 <!--<button (click)="addProduto()">Adicionar Produto</button>-->
-<table class="productListTable">
-  <thead></thead>
-  <tbody>
-  <td class="productNameData">
-    <tr>
-      <label>Nome: </label><br>
-      <input class="tableNameInput" [formControl]="name"/>
-    </tr>
-  </td>
-  <td class="productQuantityData">
-    <tr>
-      <label>Quantidade: </label><br>
-      <input class="tableQuantityInput" [formControl]="quantity"/>
-    </tr>
-  </td>
-  <td class="productUnitValueData">
-    <tr>
-      <label>Valor Unitário: </label><br>
-      <input class="tableUnitValueInput" [formControl]="unitValue"/>
-    </tr>
-  </td>
-  <td>
-    <tr>
-      <br><button (click)="addProduto()">Adicionar Produto</button>
-    </tr>
-  </td>
-  </tbody>
-</table>
-<input #inputElement>
-<p>{{test}}</p>
+<app-moviment-product-item (eventProduct)="log($event)"></app-moviment-product-item>
 

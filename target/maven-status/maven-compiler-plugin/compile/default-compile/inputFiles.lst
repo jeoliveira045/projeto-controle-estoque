@@ -1,0 +1,7 @@
+/home/jeanoliveira/projetos-pessoais/projeto-controle-estoque/src/main/java/com/controle/estoque/repository/MovimentRepository.java
+/home/jeanoliveira/projetos-pessoais/projeto-controle-estoque/src/main/java/com/controle/estoque/rest/ProductRest.java
+/home/jeanoliveira/projetos-pessoais/projeto-controle-estoque/src/main/java/com/controle/estoque/entity/Moviment.java
+/home/jeanoliveira/projetos-pessoais/projeto-controle-estoque/src/main/java/com/controle/estoque/EstoqueApplication.java
+/home/jeanoliveira/projetos-pessoais/projeto-controle-estoque/src/main/java/com/controle/estoque/rest/MovimentRest.java
+/home/jeanoliveira/projetos-pessoais/projeto-controle-estoque/src/main/java/com/controle/estoque/entity/Product.java
+/home/jeanoliveira/projetos-pessoais/projeto-controle-estoque/src/main/java/com/controle/estoque/repository/ProductRepository.java
