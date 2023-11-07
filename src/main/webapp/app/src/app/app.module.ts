@@ -10,6 +10,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MovimentFormComponent } from './components/pages/moviment-page/moviment-form/moviment-form.component';
 import { MovimentProductItemComponent } from './components/moviment-product-item/moviment-product-item.component';
 import { ProductItemDirectiveDirective } from './directives/product-item-directive.directive';
+import { LabsComponent } from './labs/labs.component';
+import { DirectiveDirective } from './labs/directive.directive';
+import { CompComponent } from './labs/comp/comp.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ProductItemDirectiveDirective } from './directives/product-item-directi
     ProductsPageComponent,
     MovimentFormComponent,
     MovimentProductItemComponent,
-    ProductItemDirectiveDirective
+    ProductItemDirectiveDirective,
+    LabsComponent,
+    DirectiveDirective,
+    CompComponent
   ],
   imports: [
     BrowserModule,

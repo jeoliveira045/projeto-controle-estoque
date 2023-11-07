@@ -2,6 +2,7 @@ import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild} 
 import {Form, FormControl} from '@angular/forms';
 import {Products} from "../../../../domain/products";
 import * as events from "events";
+import {ProductItemDirectiveDirective} from "../../../../directives/product-item-directive.directive";
 
 @Component({
   selector: 'app-moviment-form',
@@ -9,6 +10,9 @@ import * as events from "events";
   styleUrls: ['./moviment-form.component.scss']
 })
 export class MovimentFormComponent implements OnInit{
+
+  @ViewChild(ProductItemDirectiveDirective, {static: true})
+  appProductItemDirective!: ProductItemDirectiveDirective;
 
   movType: FormControl<any> = new FormControl<any>('')
 
