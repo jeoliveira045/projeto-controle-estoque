@@ -19,7 +19,7 @@ export class MovimentFormComponent implements OnInit{
 
   movimentTypeArrayList: Array<string> = ['ENTRADA', 'SAÍDA'];
 
-  productArray: Array<Products> = new Array<Products>();
+  productArray: Array<Products|null> = new Array<Products|null>();
 
   verifyList(){
     console.log(this.productArray)
@@ -34,7 +34,18 @@ export class MovimentFormComponent implements OnInit{
   addProductItem(){
     const viewContainerRef = this.appProductItemDirective.viewContainerRef
     const componentRef = viewContainerRef.createComponent(MovimentProductItemComponent)
-    componentRef.instance.eventProduct.subscribe(res => this.log(res))
+    componentRef.instance.eventProduct.subscribe(res => {
+      this.log(res)
+      componentRef.instance.index = this.productArray.indexOf(res)
+    })
+    componentRef.instance.closeEvent.subscribe(res => {
+      this.productArray[componentRef.instance.index] = null
+      componentRef.destroy()
+    })
+  }
+
+  deleteProductItem(){
+
   }
 
   constructor() { }

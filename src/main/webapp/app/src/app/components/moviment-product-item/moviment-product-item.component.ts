@@ -1,6 +1,6 @@
 import {
   AfterContentChecked,
-  Component,
+  Component, destroyPlatform,
   DoCheck,
   EventEmitter,
   Input,
@@ -30,7 +30,13 @@ export class MovimentProductItemComponent implements OnInit{
   quantity = new FormControl();
   unitValue = new FormControl();
 
+  index: number| null = 0;
+
   @Output() eventProduct: EventEmitter<any> = new EventEmitter<any>();
+
+  @Output() closeEvent: EventEmitter<any> = new EventEmitter<any>();
+  private onlySelf: any;
+  private emitEvent: any;
 
 
   addProduto(){
@@ -39,7 +45,20 @@ export class MovimentProductItemComponent implements OnInit{
     product.quantity = this.quantity.value;
     product.unityValue = this.unitValue.value;
     this.eventProduct.emit(product);
+    this.name.disable({onlySelf: true, emitEvent: true})
+    this.quantity.disable({onlySelf: true, emitEvent: true})
+    this.unitValue.disable({onlySelf: true, emitEvent: true})
   }
+
+  verificarIndex(){
+    console.log(this.index)
+  }
+
+  deleteProduto(){
+    this.closeEvent.emit(null)
+  }
+
+
 
   ngOnInit(): void {
   }
