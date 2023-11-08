@@ -1,8 +1,9 @@
-import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewChild, ViewContainerRef} from '@angular/core';
 import {Form, FormControl} from '@angular/forms';
 import {Products} from "../../../../domain/products";
 import * as events from "events";
 import {ProductItemDirectiveDirective} from "../../../../directives/product-item-directive.directive";
+import {MovimentProductItemComponent} from "../../../moviment-product-item/moviment-product-item.component";
 
 @Component({
   selector: 'app-moviment-form',
@@ -20,10 +21,20 @@ export class MovimentFormComponent implements OnInit{
 
   productArray: Array<Products> = new Array<Products>();
 
+  verifyList(){
+    console.log(this.productArray)
+  }
+
   index: number|null = null
 
   log(e:any){
     this.productArray.push(e)
+  }
+
+  addProductItem(){
+    const viewContainerRef = this.appProductItemDirective.viewContainerRef
+    const componentRef = viewContainerRef.createComponent(MovimentProductItemComponent)
+    componentRef.instance.eventProduct.subscribe(res => this.log(res))
   }
 
   constructor() { }
