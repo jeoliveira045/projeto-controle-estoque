@@ -8,7 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ProductsPageComponent } from './components/pages/products-page/products-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MovimentFormComponent } from './components/pages/moviment-page/moviment-form/moviment-form.component';
-import { MovimentProductItemComponent } from './components/moviment-product-item/moviment-product-item.component';
+import { MovimentProductItemComponent } from './components/pages/moviment-page/moviment-form/moviment-product-item/moviment-product-item.component';
 import { ProductItemDirectiveDirective } from './directives/product-item-directive.directive';
 
 @NgModule({

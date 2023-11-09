@@ -17,4 +17,8 @@ export class MovimentService {
   public findAll(): Observable<any> {
     return this.httpClient.get(`${this.URL_API}`)
   }
+
+  public insert(moviment: Moviment){
+    this.httpClient.post<Moviment>(`${this.URL_API}`,moviment).subscribe(res => res)
+  }
 }

@@ -30,7 +30,7 @@ export class MovimentPageComponent implements OnInit {
   }
 
   addMovimentacao(){
-    this.showAddMovimentacao = !this.showAddMovimentacao
+    window.location.href = "http://localhost:4200/moviment/new"
   }
 
   movProdutos(){

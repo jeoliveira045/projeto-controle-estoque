@@ -3,7 +3,11 @@ import {Form, FormControl} from '@angular/forms';
 import {Products} from "../../../../domain/products";
 import * as events from "events";
 import {ProductItemDirectiveDirective} from "../../../../directives/product-item-directive.directive";
-import {MovimentProductItemComponent} from "../../../moviment-product-item/moviment-product-item.component";
+import {MovimentProductItemComponent} from "./moviment-product-item/moviment-product-item.component";
+import {ProductService} from "../../../../services/product.service";
+import {NgForm} from "@angular/forms";
+import {Moviment} from "../../../../domain/moviment";
+import {MovimentService} from "../../../../services/moviment.service";
 
 @Component({
   selector: 'app-moviment-form',
@@ -12,14 +16,27 @@ import {MovimentProductItemComponent} from "../../../moviment-product-item/movim
 })
 export class MovimentFormComponent implements OnInit{
 
+  // @ViewChild('myForm') myForm: NgForm;
+
+  constructor(protected movimentService: MovimentService) {
+    // this.myForm = form;
+  }
+
+  log2(e:any){
+    let moviment: Moviment = new Moviment();
+    moviment.movType = this.movType.value;
+    moviment.products = this.productArray;
+    console.log(moviment);
+  }
+
   @ViewChild(ProductItemDirectiveDirective, {static: true})
   appProductItemDirective!: ProductItemDirectiveDirective;
 
-  movType: FormControl<any> = new FormControl<any>('')
+  movType: FormControl<string|undefined> = new FormControl<any>('ENTRADA')
 
-  movimentTypeArrayList: Array<string> = ['ENTRADA', 'SAÍDA'];
+  movimentTypeArrayList: Array<string> = ['ENTRADA', 'SAIDA'];
 
-  productArray: Array<Products|null> = new Array<Products|null>();
+  productArray: Array<Products> = new Array<Products>();
 
   verifyList(){
     console.log(this.productArray)
@@ -36,19 +53,17 @@ export class MovimentFormComponent implements OnInit{
     const componentRef = viewContainerRef.createComponent(MovimentProductItemComponent)
     componentRef.instance.eventProduct.subscribe(res => {
       this.log(res)
-      componentRef.instance.index = this.productArray.indexOf(res)
-    })
-    componentRef.instance.closeEvent.subscribe(res => {
-      this.productArray[componentRef.instance.index] = null
-      componentRef.destroy()
     })
   }
 
-  deleteProductItem(){
-
+  addMoviment(){
+    let moviment: Moviment = new Moviment();
+    moviment.movType = this.movType.value;
+    moviment.products = this.productArray;
+    this.movimentService.insert(moviment);
   }
 
-  constructor() { }
+
 
   ngOnInit() {}
 

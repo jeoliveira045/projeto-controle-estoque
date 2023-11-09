@@ -1,0 +1,16 @@
+<ul class="productListTable" [style]="listStyles">
+  <li class="productNameData" style="margin: 1rem 0.5rem">
+    <label>Nome: </label><br>
+    <select [disabled]="isAdded" (ngModelChange)="assignId($event)" class="tableNameInput" [(ngModel)]="productChosen">
+      <option *ngFor="let item of nameList" [ngValue]="item">{{item.name}}</option>
+    </select>
+  </li>
+  <li class="productQuantityData" style="margin: 1rem 0.5rem">
+    <label>Quantidade: </label><br>
+    <input [disabled]="isAdded" class="tableQuantityInput" [(ngModel)]="quantity"/>
+  </li>
+  <li>
+    <br><br><button [disabled]="isAdded" (click)="addProduto()">Adicionar Produto</button>
+  </li>
+</ul>
+<br>

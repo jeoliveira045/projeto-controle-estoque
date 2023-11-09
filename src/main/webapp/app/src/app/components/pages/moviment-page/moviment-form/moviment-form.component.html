@@ -1,10 +1,14 @@
-<h2>Criar Movimentação</h2>
-<label>Tipo de movimentação: </label>
-<select id="movType" name="movType" [formControl]="movType">
-  <option *ngFor="let item of movimentTypeArrayList">{{item}}</option>
-</select><br>
-<label>Movimentações a serem realizadas</label>
-<br>
-<button (click)="addProductItem()">Adicionar Produto</button><br>
-<button (click)="verifyList()">Verificar lista</button><br>
+<form>
+  <h2>Criar Movimentação</h2>
+  <label>Tipo de movimentação: </label>
+  <select id="movType" name="movType" [formControl]="movType">
+    <option *ngFor="let item of movimentTypeArrayList">{{item}}</option>
+  </select><br>
+  <label>Movimentações a serem realizadas</label>
+  <br>
+  <button (click)="addProductItem()">Adicionar Produto</button><br>
+  <ng-template appProductItemDirective></ng-template>
+  <button (click)="addMoviment()">Criar Movimentação</button>
+</form>
+
 
