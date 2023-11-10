@@ -14,5 +14,12 @@ ideias para a versão 2.0 do Projeto Estoque:
 Criar uma entidade que colete as informações de produtos e movimentação, mas não vincule essas entidades de forma rigida.
 Criar uma entidade de Vendas. A entidade herda de Movimentação e guarda informações de uma venda que pode ser realizada pelo proprio estoque.
 Estudar mais sobre estruturas de dados em typescript e formulários em angular, alem de padrões de projetos mais robustos
+Criar uma estrutura de páginação no projeto, para evitar que entidades em excesso sejam requisitadas pelo banco
+
+ideias de implementações de código:
+
+Entidade -> Produto -> Movimentação:
+R:
+
 
 
