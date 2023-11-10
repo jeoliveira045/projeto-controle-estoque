@@ -1,17 +1,24 @@
 <h2>Lista de movimentações</h2>
-<button (click)="addMovimentacao()">Realizar Movimentacao</button>
+<app-menu-page></app-menu-page>
+<button routerLink="/moviment/new">Realizar Movimentacao</button>
 <table cellspacing="0">
   <thead>
+    <tr>
+      <th>id</th>
+      <th>Tipo de Movimentação</th>
+      <th>Data de movimentação</th>
+    </tr>
   </thead>
   <tbody>
-    <td style="border: 1px solid black;">
-      <tr style="border-bottom: 1px solid black;" *ngFor="let item of movimentArrayList">{{item.id}}</tr>
+
+    <td >
+      <tr *ngFor="let item of movimentArrayList">{{item.id}}</tr>
     </td>
-    <td style="border: 1px solid black;">
+    <td >
       <tr *ngFor="let item of movimentArrayList">{{item.movType}}</tr>
     </td>
-    <td style="border: 1px solid black;">
-      <tr *ngFor="let item of movimentArrayList">{{item.movData}}</tr>
+    <td >
+      <tr *ngFor="let item of movimentArrayList">{{dateFormat(item.movData)}}</tr>
     </td>
   </tbody>
 </table>

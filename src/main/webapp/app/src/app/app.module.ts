@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MovimentFormComponent } from './components/pages/moviment-page/moviment-form/moviment-form.component';
 import { MovimentProductItemComponent } from './components/pages/moviment-page/moviment-form/moviment-product-item/moviment-product-item.component';
 import { ProductItemDirectiveDirective } from './directives/product-item-directive.directive';
+import { MenuPageComponent } from './menu/menu-page/menu-page.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProductItemDirectiveDirective } from './directives/product-item-directi
     MovimentFormComponent,
     MovimentProductItemComponent,
     ProductItemDirectiveDirective,
+    MenuPageComponent,
   ],
   imports: [
     BrowserModule,

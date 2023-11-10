@@ -18,7 +18,20 @@ export class MovimentService {
     return this.httpClient.get(`${this.URL_API}`)
   }
 
-  public insert(moviment: Moviment){
-    this.httpClient.post<Moviment>(`${this.URL_API}`,moviment).subscribe(res => res)
+  public findById(id: number){
+    return this.httpClient.get(`${this.URL_API}/${id}`)
   }
+
+  public insert(resource: Moviment){
+    this.httpClient.post<Moviment>(`${this.URL_API}`,resource).subscribe(res => res)
+  }
+
+  public save(resource: Moviment, id: number){
+    resource['id']?this.httpClient.put(`${this.URL_API}/${resource['id']}`,resource):this.insert(resource)
+  }
+
+  public delete(id: number){
+    this.httpClient.delete(`${this.URL_API}/${id}`)
+  }
+
 }

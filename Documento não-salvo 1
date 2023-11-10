@@ -1,0 +1,18 @@
+Problemas da versão 1.0 do Projeto Estoque:
+
+A impossibilidade de excluir produtos ja existentes pela vinculação com a entidade movimentação
+Codigo mal implementado, que não segue as boas praticas. Os seguintes erros de implementação incluem:
+    - Formulários que foram construidos em abordagens avulsas, que não se comunicam entre si
+    - Os dados da entidade produto ficam muito acoplados, de forma que uma possivel implementação da 
+      entidade venda teria que se comunicar diretamente com a entidade produto para realizar o calculo do preço e o calculo de quantia em estoque.
+    - Incapacidade do relatorio de movimentação de excluir campos do formulário.
+Recursos de passagens entre as páginas não segue boas práticas do angular.
+
+
+ideias para a versão 2.0 do Projeto Estoque:
+
+Criar uma entidade que colete as informações de produtos e movimentação, mas não vincule essas entidades de forma rigida.
+Criar uma entidade de Vendas. A entidade herda de Movimentação e guarda informações de uma venda que pode ser realizada pelo proprio estoque.
+Estudar mais sobre estruturas de dados em typescript e formulários em angular, alem de padrões de projetos mais robustos
+
+

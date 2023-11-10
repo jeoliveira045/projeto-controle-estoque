@@ -24,7 +24,7 @@ public class MovimentRest {
 
     @GetMapping
     public ResponseEntity<List<Moviment>> findAll(){
-        return ResponseEntity.ok(movimentRepository.findAll());
+        return ResponseEntity.ok(movimentRepository.findAllSortedByMovData());
     }
 
     @PostMapping

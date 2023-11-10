@@ -48,6 +48,7 @@ export class MovimentFormComponent implements OnInit{
     this.productArray.push(e)
   }
 
+
   addProductItem(){
     const viewContainerRef = this.appProductItemDirective.viewContainerRef
     const componentRef = viewContainerRef.createComponent(MovimentProductItemComponent)

@@ -18,7 +18,7 @@ public class ProductRest {
 
     @GetMapping
     public ResponseEntity<List<Product>> findAll(){
-        return ResponseEntity.ok(productRepository.findAll());
+        return ResponseEntity.ok(productRepository.findAllSortedByIdAsc());
     }
 
     @GetMapping("/{id}")

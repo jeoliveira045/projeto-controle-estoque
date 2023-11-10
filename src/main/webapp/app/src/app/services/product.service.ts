@@ -15,4 +15,22 @@ export class ProductService {
   public findAll(): Observable<any>{
     return this.httpClient.get(`${this.URL_API}`)
   }
+
+  public findById(id: number){
+    return this.httpClient.get(`${this.URL_API}/${id}`)
+  }
+
+  public insert(resource: Products){
+    return this.httpClient.post(`${this.URL_API}`, resource)
+  }
+
+  public save(resource: Products){
+    return resource['id']?this.httpClient.put(`${this.URL_API}/${resource['id']}`,resource):this.insert(resource)
+  }
+
+  public delete(id: number){
+    return this.httpClient.delete(`${this.URL_API}/${id}`)
+  }
+
+
 }
